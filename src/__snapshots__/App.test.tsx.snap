@@ -2,15 +2,17 @@
 
 exports[`Renders App 1`] = `
 <div>
-  <div
-    class="sc-bczSft bCpuYE"
-  />
-  <div
-    class="sc-bczSft sc-gsnScm bCpuYE evhmsc"
-  />
-  <div
-    class="sc-bczSft sc-dkzCjb bCpuYE uOhuJ"
-  />
-  <div />
+  <div>
+    <div
+      class="sc-bczSft bCpuYE"
+    />
+    <div
+      class="sc-bczSft sc-gsnScm bCpuYE evhmsc"
+    />
+    <div
+      class="sc-bczSft sc-dkzCjb bCpuYE uOhuJ"
+    />
+    <div />
+  </div>
 </div>
 `;
