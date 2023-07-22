@@ -6,6 +6,7 @@ function App() {
   return (
     <Background>
       <NavBar />
+      <h1>Content</h1>
     </Background>
   );
 }
