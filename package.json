@@ -1,6 +1,7 @@
 {
   "name": "game-component-demos",
   "version": "0.1.0",
+  "homepage": "https://timothy-ch-cheung.github.io/game-component-demos",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -20,10 +21,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   },
   "eslintConfig": {
     "extends": [
