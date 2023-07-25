@@ -5,12 +5,12 @@ interface Props {
   children: React.ReactNode;
 }
 
-const firstColour = "#d4f0f0"
-const secondColour = "#8fcaca"
+const FIRST_COLOUR = "#d4f0f0"
+const SECOND_COLOUR = "#8fcaca"
 
 const MainBackground = styled.div`
     animation:slide 20s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, ${firstColour} 50%, ${secondColour} 50%);
+    background-image: linear-gradient(-60deg, ${FIRST_COLOUR} 50%, ${SECOND_COLOUR} 50%);
     top:0;
     bottom:0;
     left:-50%;
