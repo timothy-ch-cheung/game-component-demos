@@ -7,6 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Divider from '@mui/material/Divider';
 
 const SPACING = 2.5;
 const ICON_SPACING = 0.25;
@@ -18,6 +19,11 @@ const style = {
   display: "block",
   fontSize: "1.2em",
 };
+
+const textStyle = {
+  fontSize: "1.4em",
+  marginRight: SPACING
+}
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -43,15 +49,17 @@ export const NavBar = () => {
   }
 
   return (
-    <AppBar position="static" style={{ background: "#393D47" }}>
+    <AppBar position="static" style={{ background: "#393D47", display: "flex" }}>
       <Toolbar>
+      <h1 style={textStyle}>Game Components</h1>
+      <Divider orientation="vertical" flexItem light style={{marginLeft: 10, marginRight: 10, background: "white"}} variant="middle"/>
         <CabinIcon sx={{ mr: ICON_SPACING }} />
         <Button sx={style} onClick={handleHomeClick}>
           Home
         </Button>
         <SportsEsportsIcon sx={{ mr: ICON_SPACING }} />
         <Button sx={style} onClick={handleDemoMenuClick}>
-          Game Component Demos
+          Demos
         </Button>
         <Menu
           id="basic-menu"
