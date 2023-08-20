@@ -84,6 +84,13 @@ export const NavBar = () => {
           >
             Map Tween
           </MenuItem>
+          <MenuItem
+            onClick={demoMenuItemHandler(
+              "/game-component-demos/demos/physics-animation"
+            )}
+          >
+            Physics Animation
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

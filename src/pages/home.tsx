@@ -89,6 +89,39 @@ export function Home() {
               </Button>
             </CardActions>
           </Card>
+          <Card sx={{ width: 400 }}>
+            <CardMedia
+              image={mapTween}
+              sx={{
+                height: 400,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Physics and Animation
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Basic platformer with physics and animation for combo attacks.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                onClick={() =>
+                  navigate("/game-component-demos/demos/physics-animation")
+                }
+              >
+                Try it out
+              </Button>
+              <Button
+                component={Link}
+                href="https://github.com/timothy-ch-cheung/go-game-animation-physics"
+              >
+                Source code
+              </Button>
+            </CardActions>
+          </Card>
         </Stack>
       </Stack>
     </div>
