@@ -32,6 +32,13 @@ export function PhysicsAnimation() {
                         height="480"
                         style={{ border: 0 }}
                         scrolling="no"
+                        onLoad={() => {
+                            setTimeout(() => {
+                                const iframe = document.getElementById("physics-animation-iframe") as HTMLIFrameElement
+                                const canvas = iframe?.contentWindow?.document.querySelector("canvas")
+                                canvas?.focus()
+                            }, 100)
+                        }}
                     ></iframe>
                 </div>
             </div>
