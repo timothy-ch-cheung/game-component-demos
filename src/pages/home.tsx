@@ -1,5 +1,6 @@
 import gameMenu from "../assets/game-menu.gif";
 import mapTween from "../assets/map-tween.gif";
+import physicsAnimation from "../assets/physics-animation.gif"
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -89,9 +90,9 @@ export function Home() {
               </Button>
             </CardActions>
           </Card>
-          <Card sx={{ width: 400 }}>
+          <Card sx={{ width: 500 }}>
             <CardMedia
-              image={mapTween}
+              image={physicsAnimation}
               sx={{
                 height: 400,
                 backgroundSize: "cover",
