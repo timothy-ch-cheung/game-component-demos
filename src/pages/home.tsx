@@ -16,7 +16,6 @@ import {
   useDeviceOrientation,
   useDeviceType,
 } from "../components/Device";
-import { useOrientation } from "@uidotdev/usehooks";
 
 interface CardProps {
   onTryClick: () => void;
