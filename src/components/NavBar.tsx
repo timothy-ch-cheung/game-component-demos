@@ -8,7 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Divider from "@mui/material/Divider";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { DeviceType, useDeviceType } from "./Device";
 
 const SPACING = 2.5;
 const ICON_SPACING = 0.25;
@@ -28,7 +28,7 @@ const textStyle = {
 
 export const NavBar = () => {
   const navigate = useNavigate();
-  const mediaQuery = useMediaQuery("only screen and (max-width : 768px)");
+  const deviceType = useDeviceType();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -56,7 +56,7 @@ export const NavBar = () => {
       style={{ background: "#393D47", display: "flex" }}
     >
       <Toolbar>
-        {!mediaQuery && (
+        {deviceType !== DeviceType.MOBILE && (
           <>
             <h1 style={textStyle}>Game Components</h1>
             <Divider
