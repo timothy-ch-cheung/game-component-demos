@@ -40,7 +40,7 @@ function getCardStyle(type: DeviceType, orientation: DeviceOrientation) {
     }
   }
 
-  return { width: "100%", height: "70%", minHeight: "500px" };
+  return { width: "100%", height: "85%", minHeight: "550px" };
 }
 
 function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
@@ -54,7 +54,7 @@ function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
       backgroundPosition: "top",
     };
   }
-  return { height: "60%", backgroundSize: "cover", backgroundPosition: "top" };
+  return { height: "60%", backgroundSize: "cover", backgroundPosition: "center" };
 }
 
 function DemoCard(props: CardProps) {
