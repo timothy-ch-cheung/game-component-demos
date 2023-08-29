@@ -7,7 +7,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const SPACING = 2.5;
 const ICON_SPACING = 0.25;
@@ -22,11 +23,12 @@ const style = {
 
 const textStyle = {
   fontSize: "1.4em",
-  marginRight: SPACING
-}
+  marginRight: SPACING,
+};
 
 export const NavBar = () => {
   const navigate = useNavigate();
+  const mediaQuery = useMediaQuery("only screen and (max-width : 768px)");
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -49,10 +51,23 @@ export const NavBar = () => {
   }
 
   return (
-    <AppBar position="static" style={{ background: "#393D47", display: "flex" }}>
+    <AppBar
+      position="static"
+      style={{ background: "#393D47", display: "flex" }}
+    >
       <Toolbar>
-      <h1 style={textStyle}>Game Components</h1>
-      <Divider orientation="vertical" flexItem light style={{marginLeft: 10, marginRight: 10, background: "white"}} variant="middle"/>
+        {!mediaQuery && (
+          <>
+            <h1 style={textStyle}>Game Components</h1>
+            <Divider
+              orientation="vertical"
+              flexItem
+              light
+              style={{ marginLeft: 10, marginRight: 10, background: "white" }}
+              variant="middle"
+            />
+          </>
+        )}
         <CabinIcon sx={{ mr: ICON_SPACING }} />
         <Button sx={style} onClick={handleHomeClick}>
           Home
