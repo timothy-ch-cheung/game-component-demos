@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import Link from "@mui/material/Link";
 import { useNavigate } from "react-router-dom";
+import { useOrientation } from "@uidotdev/usehooks";
 
 interface CardProps {
   onTryClick: () => void,
@@ -19,11 +20,11 @@ interface CardProps {
   image: string
 }
 function DemoCard(props:CardProps) {
-  return <Card sx={{ width: "auto", height: "70%"}}>
+  return <Card sx={{ width: "100%", height: "70%", minHeight: "500px"}}>
   <CardMedia
     image={props.image}
     sx={{
-      height: "70%",
+      height: "60%",
       backgroundSize: "cover",
       backgroundPosition: "top",
     }}
@@ -48,8 +49,14 @@ function DemoCard(props:CardProps) {
 </Card>
 }
 
+function isLandscape(orientation: string): boolean {
+  return orientation === "landscape-primary" || orientation === "landscape-secondary"
+}
+
 export function Home() {
   const navigate = useNavigate();
+  const orientation = useOrientation();
+
   return (
     <div style={{ display: "flex", justifyContent: "center", margin: "2.5%", height: "100%" }}>
       <Stack alignItems="center" spacing={4} height="100%">
@@ -58,7 +65,7 @@ export function Home() {
           various other libraries to make common game concepts/components. They
           are served as WebAssembly, so you can test them out on this site!
         </p>
-        <Stack direction="row" spacing={4} height="100%">
+        <Stack direction={isLandscape(orientation.type)? "row":"column"} spacing={4} height="100%">
           <DemoCard
             onTryClick={() => navigate("/game-component-demos/demos/game-menu")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-menu"
