@@ -41,11 +41,11 @@ const TertiaryBackground = styled(MainBackground)`
 
 export const Background: React.FunctionComponent<Props> = (props) => {
   return (
-    <div>
+    <div style={{height: "100%"}}>
       <MainBackground />
       <SecondaryBackground/>
       <TertiaryBackground/>
-      <div>{props.children}</div>
+      <div style={{height: "100%"}}>{props.children}</div>
     </div>
   );
 };
