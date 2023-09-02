@@ -26,35 +26,25 @@ interface CardProps {
 }
 
 function getCardStyle(type: DeviceType, orientation: DeviceOrientation) {
-  if (type === DeviceType.MOBILE) {
-    if (orientation === DeviceOrientation.LANDSCAPE) {
-      return { width: "100%", height: "60%", minHeight: "350px" };
+  if (orientation === DeviceOrientation.PORTRAIT) {
+    if (type === DeviceType.MOBILE) {
+      return { width: "95vw" };
     } else {
-      return { width: "100%", height: "60%", minHeight: "400px" };
-    }
-  } else if (type === DeviceType.TABLET) {
-    if (orientation === DeviceOrientation.LANDSCAPE) {
-      return { width: "100%", height: "60%", minHeight: "450px" };
-    } else {
-      return { width: "90%", height: "60%", minHeight: "500px" };
+      return { width: "90vw" };
     }
   }
-
-  return { width: "100%", height: "85%", minHeight: "550px" };
+  return { width: "30vw" };
 }
 
 function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
-  if (
-    (type === DeviceType.MOBILE || type === DeviceType.TABLET) &&
-    orientation === DeviceOrientation.LANDSCAPE
-  ) {
-    return {
-      height: "45%",
-      backgroundSize: "cover",
-      backgroundPosition: "top",
-    };
+  if (orientation === DeviceOrientation.PORTRAIT) {
+    if (type === DeviceType.MOBILE) {
+      return { height: "95vw" };
+    } else {
+      return { height: "90vw" };
+    }
   }
-  return { height: "60%", backgroundSize: "cover", backgroundPosition: "center" };
+  return { height: "30vw" };
 }
 
 function DemoCard(props: CardProps) {
@@ -62,7 +52,12 @@ function DemoCard(props: CardProps) {
   const orientation = useDeviceOrientation();
 
   return (
-    <Card sx={getCardStyle(type, orientation)}>
+    <Card
+      sx={{
+        ...{ overflow: "visible", height: "100%" },
+        ...getCardStyle(type, orientation),
+      }}
+    >
       <CardMedia
         image={props.image}
         sx={getCardImageStyle(type, orientation)}
@@ -95,15 +90,14 @@ export function Home() {
         display: "flex",
         justifyContent: "center",
         margin: "2.5%",
-        height: "100%",
       }}
     >
-      <Stack alignItems="center" spacing={4} height="80%">
-        <p style={{ fontSize: "1.2em", textAlign: "center" }}>
+      <Stack alignItems="center" spacing={4}>
+        <Typography gutterBottom variant="h5" align="center">
           A collection of demos written in Go using Ebitengine, combining
           various other libraries to make common game concepts/components. They
           are served as WebAssembly, so you can test them out on this site!
-        </p>
+        </Typography>
         <Stack
           direction={
             orientation === DeviceOrientation.LANDSCAPE ? "row" : "column"
