@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import { GameMenu } from "./pages/gameMenu";
 import { MapTween } from "./pages/mapTween";
 import { PhysicsAnimation } from "./pages/physicsAnimation";
+import { BlockPlacement } from "./pages/blockPlacement";
 
 function Layout() {
   return <Background>
@@ -25,6 +26,7 @@ function App() {
               <Route path="game-menu" element={<GameMenu/>}/>
               <Route path="map-tween" element={<MapTween/>}/>
               <Route path="physics-animation" element={<PhysicsAnimation/>}/>
+              <Route path="block-placement" element={<BlockPlacement/>}/>
             </Route>
           </Route>
         </Routes>

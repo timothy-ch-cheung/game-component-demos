@@ -1,6 +1,7 @@
 import gameMenu from "../assets/game-menu.gif";
 import mapTween from "../assets/map-tween.gif";
 import physicsAnimation from "../assets/physics-animation.gif";
+import blockPlacement from "../assets/block-placement.gif";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -33,7 +34,7 @@ function getCardStyle(type: DeviceType, orientation: DeviceOrientation) {
       return { width: "90vw" };
     }
   }
-  return { width: "30vw" };
+  return { width: "22vw" };
 }
 
 function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
@@ -44,7 +45,7 @@ function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
       return { height: "90vw" };
     }
   }
-  return { height: "30vw" };
+  return { height: "22vw" };
 }
 
 function DemoCard(props: CardProps) {
@@ -128,6 +129,15 @@ export function Home() {
             title="Physics and Animation"
             description="Basic platformer with physics and animation for combo attacks."
             image={physicsAnimation}
+          />
+          <DemoCard
+            onTryClick={() =>
+              navigate("/game-component-demos/demos/block-placement")
+            }
+            codeSource="https://github.com/timothy-ch-cheung/go-game-block-placement"
+            title="Block Placement"
+            description="Top down 2D and Isometric rendering with cursor collision detection."
+            image={blockPlacement}
           />
         </Stack>
       </Stack>

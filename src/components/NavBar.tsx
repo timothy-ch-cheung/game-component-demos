@@ -106,6 +106,13 @@ export const NavBar = () => {
           >
             Physics Animation
           </MenuItem>
+          <MenuItem
+            onClick={demoMenuItemHandler(
+              "/game-component-demos/demos/block-placement"
+            )}
+          >
+            Block Placement
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
