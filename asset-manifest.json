@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/game-component-demos/static/css/main.55cff9c4.css",
-    "main.js": "/game-component-demos/static/js/main.8932f928.js",
+    "main.js": "/game-component-demos/static/js/main.b8f6fa93.js",
     "static/js/787.63a040e4.chunk.js": "/game-component-demos/static/js/787.63a040e4.chunk.js",
-    "static/media/block-placement.gif": "/game-component-demos/static/media/block-placement.3ec5286d7734fae6303d.gif",
     "static/media/map-tween.gif": "/game-component-demos/static/media/map-tween.5d88f892c86b287cad6d.gif",
+    "static/media/block-placement.gif": "/game-component-demos/static/media/block-placement.339fa3ea88f1be1d1deb.gif",
     "static/media/game-menu.gif": "/game-component-demos/static/media/game-menu.3b2682ae412249734ab5.gif",
     "static/media/physics-animation.gif": "/game-component-demos/static/media/physics-animation.e65fc4ad98ef3cc0dd60.gif",
     "index.html": "/game-component-demos/index.html",
     "main.55cff9c4.css.map": "/game-component-demos/static/css/main.55cff9c4.css.map",
-    "main.8932f928.js.map": "/game-component-demos/static/js/main.8932f928.js.map",
+    "main.b8f6fa93.js.map": "/game-component-demos/static/js/main.b8f6fa93.js.map",
     "787.63a040e4.chunk.js.map": "/game-component-demos/static/js/787.63a040e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.55cff9c4.css",
-    "static/js/main.8932f928.js"
+    "static/js/main.b8f6fa93.js"
   ]
 }
