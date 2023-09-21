@@ -7,15 +7,14 @@ export enum DeviceType {
 }
 
 export function useDeviceType(): DeviceType {
-  const isMobile = useMediaQuery("only screen and (max-width : 480px)");
-  const isTablet = useMediaQuery("only screen and (max-width : 768px)");
+  const isMobile = useMediaQuery("only screen and (max-width : 900px)");
+  const isTablet = useMediaQuery("only screen and (max-width : 1200px)");
 
   if (isMobile) {
     return DeviceType.MOBILE;
   } else if (isTablet) {
     return DeviceType.TABLET;
   }
-
   return DeviceType.DESKTOP;
 }
 

@@ -17,6 +17,7 @@ import {
   useDeviceOrientation,
   useDeviceType,
 } from "../components/Device";
+import Grid from "@mui/material/Grid";
 
 interface CardProps {
   onTryClick: () => void;
@@ -26,24 +27,11 @@ interface CardProps {
   image: string;
 }
 
-function getCardStyle(type: DeviceType, orientation: DeviceOrientation) {
-  if (orientation === DeviceOrientation.PORTRAIT) {
-    if (type === DeviceType.MOBILE) {
-      return { width: "95vw" };
-    } else {
-      return { width: "90vw" };
-    }
-  }
-  return { width: "22vw" };
-}
-
 function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
-  if (orientation === DeviceOrientation.PORTRAIT) {
-    if (type === DeviceType.MOBILE) {
-      return { height: "95vw" };
-    } else {
-      return { height: "90vw" };
-    }
+  if (type === DeviceType.MOBILE) {
+    return { height: "95vw" };
+  } else if (type === DeviceType.TABLET) {
+    return { height: "45vw" };
   }
   return { height: "22vw" };
 }
@@ -53,37 +41,37 @@ function DemoCard(props: CardProps) {
   const orientation = useDeviceOrientation();
 
   return (
-    <Card
-      sx={{
-        ...{ overflow: "visible", height: "100%" },
-        ...getCardStyle(type, orientation),
-      }}
-    >
-      <CardMedia
-        image={props.image}
-        sx={getCardImageStyle(type, orientation)}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button onClick={props.onTryClick}>Try it out</Button>
-        <Button component={Link} href={props.codeSource}>
-          Source code
-        </Button>
-      </CardActions>
-    </Card>
+    <Grid item xs={12} md={6} lg={3} paddingRight="8px" paddingBottom="8px">
+      <Card
+        sx={{
+          ...{ overflow: "visible", height: "100%" },
+        }}
+      >
+        <CardMedia
+          image={props.image}
+          sx={getCardImageStyle(type, orientation)}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {props.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {props.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button onClick={props.onTryClick}>Try it out</Button>
+          <Button component={Link} href={props.codeSource}>
+            Source code
+          </Button>
+        </CardActions>
+      </Card>
+    </Grid>
   );
 }
 
 export function Home() {
   const navigate = useNavigate();
-  const orientation = useDeviceOrientation();
 
   return (
     <div
@@ -99,14 +87,7 @@ export function Home() {
           various other libraries to make common game concepts/components. They
           are served as WebAssembly, so you can test them out on this site!
         </Typography>
-        <Stack
-          direction={
-            orientation === DeviceOrientation.LANDSCAPE ? "row" : "column"
-          }
-          spacing={4}
-          height="100%"
-          alignItems="center"
-        >
+        <Grid container spacing={1} alignItems="stretch">
           <DemoCard
             onTryClick={() => navigate("/game-component-demos/demos/game-menu")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-menu"
@@ -139,7 +120,7 @@ export function Home() {
             description="Top down 2D and Isometric rendering with cursor collision detection."
             image={blockPlacement}
           />
-        </Stack>
+        </Grid>
       </Stack>
     </div>
   );
