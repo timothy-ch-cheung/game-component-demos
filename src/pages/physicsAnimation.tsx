@@ -1,12 +1,27 @@
+import { DeviceSize, useDeviceSize } from "../components/Device";
 import GameWindow from "../components/GameWindow";
 
+function getWindowSize(size: DeviceSize): [number, number] {
+  switch (size) {
+    case DeviceSize.EXTRA_SMALL:
+      return [360, 240];
+    case DeviceSize.SMALL:
+      return [540, 360];
+    case DeviceSize.MEDIUM:
+      return [720, 480];
+    case DeviceSize.LARGE:
+      return [1080, 720];
+  }
+}
+
 export function PhysicsAnimation() {
+  let [width, height] = getWindowSize(useDeviceSize());
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: "5%" }}>
       <GameWindow
         wasmFile="physicsAnimation-1-0-0.wasm"
-        width={720}
-        height={480}
+        width={width}
+        height={height}
       />
     </div>
   );

@@ -1,21 +1,25 @@
 import { useMediaQuery, useOrientation } from "@uidotdev/usehooks";
 
-export enum DeviceType {
-  MOBILE = 1,
-  TABLET,
-  DESKTOP,
+export enum DeviceSize {
+  EXTRA_SMALL = 1,
+  SMALL,
+  MEDIUM,
+  LARGE,
 }
 
-export function useDeviceType(): DeviceType {
-  const isMobile = useMediaQuery("only screen and (max-width : 900px)");
-  const isTablet = useMediaQuery("only screen and (max-width : 1200px)");
+export function useDeviceSize(): DeviceSize {
+  const isExtraSmall = useMediaQuery("only screen and (max-width : 600px)");
+  const isSmall = useMediaQuery("only screen and (max-width : 900px)");
+  const isMedium = useMediaQuery("only screen and (max-width : 1200px)");
 
-  if (isMobile) {
-    return DeviceType.MOBILE;
-  } else if (isTablet) {
-    return DeviceType.TABLET;
+  if (isExtraSmall) {
+    return DeviceSize.EXTRA_SMALL;
+  } else if (isSmall) {
+    return DeviceSize.SMALL;
+  } else if (isMedium) {
+    return DeviceSize.MEDIUM;
   }
-  return DeviceType.DESKTOP;
+  return DeviceSize.LARGE;
 }
 
 export enum DeviceOrientation {

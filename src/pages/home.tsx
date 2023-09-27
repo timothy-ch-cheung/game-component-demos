@@ -13,9 +13,9 @@ import Link from "@mui/material/Link";
 import { useNavigate } from "react-router-dom";
 import {
   DeviceOrientation,
-  DeviceType,
+  DeviceSize,
   useDeviceOrientation,
-  useDeviceType,
+  useDeviceSize,
 } from "../components/Device";
 import Grid from "@mui/material/Grid";
 
@@ -27,17 +27,17 @@ interface CardProps {
   image: string;
 }
 
-function getCardImageStyle(type: DeviceType, orientation: DeviceOrientation) {
-  if (type === DeviceType.MOBILE) {
+function getCardImageStyle(type: DeviceSize, orientation: DeviceOrientation) {
+  if (type === DeviceSize.SMALL) {
     return { height: "95vw" };
-  } else if (type === DeviceType.TABLET) {
+  } else if (type === DeviceSize.MEDIUM) {
     return { height: "45vw" };
   }
   return { height: "22vw" };
 }
 
 function DemoCard(props: CardProps) {
-  const type = useDeviceType();
+  const type = useDeviceSize();
   const orientation = useDeviceOrientation();
 
   return (
