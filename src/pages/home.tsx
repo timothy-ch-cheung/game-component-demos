@@ -28,7 +28,7 @@ interface CardProps {
 }
 
 function getCardImageStyle(type: DeviceSize, orientation: DeviceOrientation) {
-  if (type === DeviceSize.SMALL) {
+  if (type === DeviceSize.SMALL || type === DeviceSize.EXTRA_SMALL) {
     return { height: "95vw" };
   } else if (type === DeviceSize.MEDIUM) {
     return { height: "45vw" };

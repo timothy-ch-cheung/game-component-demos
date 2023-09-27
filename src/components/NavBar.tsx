@@ -56,7 +56,7 @@ export const NavBar = () => {
       style={{ background: "#393D47", display: "flex" }}
     >
       <Toolbar>
-        {deviceType !== DeviceSize.SMALL && (
+        {deviceType !== DeviceSize.SMALL && deviceType !== DeviceSize.EXTRA_SMALL && (
           <>
             <h1 style={textStyle}>Game Components</h1>
             <Divider
