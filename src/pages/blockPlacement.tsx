@@ -38,7 +38,7 @@ const LIBRARIES = [
   },
 ];
 
-const ART = [{name: "Sprites", link: "https://github.com/timothy-ch-cheung"}]
+const ART = [{ name: "Sprites", link: "https://github.com/timothy-ch-cheung" }];
 
 function getWindowSize(size: DeviceSize): [number, number] {
   switch (size) {
@@ -66,6 +66,7 @@ export function BlockPlacement() {
         />
         <Description
           desc={DESCRIPTION}
+          sourceCode="https://github.com/timothy-ch-cheung/go-game-block-placement"
           controls={CONTROLS}
           libraries={LIBRARIES}
           art={ART}

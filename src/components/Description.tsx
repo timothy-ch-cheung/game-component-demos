@@ -26,16 +26,12 @@ interface Art {
 
 interface DescriptionProps {
   desc: string;
+  sourceCode: string;
   controls: Control[];
   libraries: Library[];
   art: Art[];
   maxWidth: number;
 }
-
-const Link = styled.a`
-  margin: 2.5px;
-  font-size: 0.95em;
-`;
 
 const Spacer = styled(Divider)`
   margin: 20px 5px;
@@ -61,6 +57,13 @@ export default function Description(props: DescriptionProps) {
     max-width: ${maxWidth}px;
   `;
 
+  const Link = styled.a`
+    margin: 2.5px;
+    font-size: 0.95em;
+    display: inline-block;
+    max-width: ${maxWidth}px;
+  `;
+
   return (
     <Accordion disableGutters={true}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -72,13 +75,16 @@ export default function Description(props: DescriptionProps) {
       <AccordionDetails>
         <SubHeading>Controls</SubHeading>
         {props.controls.map((control) => {
-          return <Text>{`${control.key}: ${control.action}`}</Text>;
+          return <Text key={control.key}>{`${control.key}: ${control.action}`}</Text>;
         })}
+        <Spacer />
+        <SubHeading>Source Code</SubHeading>
+        <Link href={props.sourceCode}>{props.sourceCode}</Link>
         <Spacer />
         <SubHeading>Libraries Used</SubHeading>
         {props.libraries.map((library) => {
           return (
-            <div style={{ marginBottom: "10px" }}>
+            <div key={library.name} style={{ marginBottom: "10px" }}>
               <Text>{`${library.name}: ${library.description}`}</Text>
               <Link href={library.link}>{library.link}</Link>
             </div>
@@ -88,7 +94,7 @@ export default function Description(props: DescriptionProps) {
         <SubHeading>Art Credits</SubHeading>
         {props.art.map((a) => {
           return (
-            <div style={{ marginBottom: "10px" }}>
+            <div key={a.name} style={{ marginBottom: "10px" }}>
               <Text>{a.name}</Text>
               <Link href={a.link}>{a.link}</Link>
             </div>
