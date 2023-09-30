@@ -4,7 +4,7 @@ import { DeviceSize, useDeviceSize } from "../components/Device";
 import GameWindow from "../components/GameWindow";
 
 const DESCRIPTION =
-  "Place and Delete blocks. Swith between views using the Iso/2d toggle on the top left";
+  "Place and Delete blocks. Swith between views using the Iso/2d toggle on the top left.";
 const CONTROLS = [
   { key: "Left Mouse Click", action: "Place Block, Switch View" },
   { key: "Right Mouse Click", action: "Delete Block" },
@@ -38,6 +38,8 @@ const LIBRARIES = [
   },
 ];
 
+const ART = [{name: "Sprites", link: "https://github.com/timothy-ch-cheung"}]
+
 function getWindowSize(size: DeviceSize): [number, number] {
   switch (size) {
     case DeviceSize.EXTRA_SMALL:
@@ -66,6 +68,7 @@ export function BlockPlacement() {
           desc={DESCRIPTION}
           controls={CONTROLS}
           libraries={LIBRARIES}
+          art={ART}
           maxWidth={width}
         />
       </Stack>
