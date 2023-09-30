@@ -40,13 +40,13 @@ const Spacer = styled(Divider)`
 export default function Description(props: DescriptionProps) {
   const maxWidth = props.maxWidth * 0.8;
   const Heading = styled.h1`
-    margin: 5px 2.5px;
+    margin: 2.5px;
     font-size: 1.25em;
     max-width: ${maxWidth}px;
   `;
 
   const SubHeading = styled.h2`
-    margin: 5px;
+    margin: 2.5px;
     font-size: 1em;
     max-width: ${maxWidth}px;
   `;
