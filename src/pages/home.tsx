@@ -2,6 +2,7 @@ import gameMenu from "../assets/game-menu.gif";
 import mapTween from "../assets/map-tween.gif";
 import physicsAnimation from "../assets/physics-animation.gif";
 import blockPlacement from "../assets/block-placement.gif";
+import textCrawl from "../assets/text-crawl.gif";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -119,6 +120,15 @@ export function Home() {
             title="Block Placement"
             description="Top down 2D and Isometric rendering with cursor collision detection."
             image={blockPlacement}
+          />
+          <DemoCard
+            onTryClick={() =>
+              navigate("/game-component-demos/demos/text-crawl")
+            }
+            codeSource="https://github.com/timothy-ch-cheung/text-crawl"
+            title="Text Crawl"
+            description="Slowly revealing text, commonly used in RPGs."
+            image={textCrawl}
           />
         </Grid>
       </Stack>

@@ -7,30 +7,33 @@ import { GameMenu } from "./pages/gameMenu";
 import { MapTween } from "./pages/mapTween";
 import { PhysicsAnimation } from "./pages/physicsAnimation";
 import { BlockPlacement } from "./pages/blockPlacement";
+import { TextCrawl } from "./pages/textCrawl";
 
 function Layout() {
-  return <Background>
+  return (
+    <Background>
       <NavBar />
-      <Outlet/>
+      <Outlet />
     </Background>
+  );
 }
-
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="game-component-demos/" element={<Layout/>}>
-            <Route path="" element={<Home/>}/>
-            <Route path="demos/">
-              <Route path="game-menu" element={<GameMenu/>}/>
-              <Route path="map-tween" element={<MapTween/>}/>
-              <Route path="physics-animation" element={<PhysicsAnimation/>}/>
-              <Route path="block-placement" element={<BlockPlacement/>}/>
-            </Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path="game-component-demos/" element={<Layout />}>
+          <Route path="" element={<Home />} />
+          <Route path="demos/">
+            <Route path="game-menu" element={<GameMenu />} />
+            <Route path="map-tween" element={<MapTween />} />
+            <Route path="physics-animation" element={<PhysicsAnimation />} />
+            <Route path="block-placement" element={<BlockPlacement />} />
+            <Route path="text-crawl" element={<TextCrawl />} />
           </Route>
-        </Routes>
-      </BrowserRouter>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -27,7 +27,7 @@ const LIBRARIES = [
     link: "https://github.com/SolarLune/resolv",
   },
   {
-    name: "Resolv",
+    name: "ganim8",
     description: "Animating character sprite",
     link: "https://github.com/yohamta/ganim8",
   },
