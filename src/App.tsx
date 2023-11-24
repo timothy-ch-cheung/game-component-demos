@@ -8,6 +8,7 @@ import { MapTween } from "./pages/mapTween";
 import { PhysicsAnimation } from "./pages/physicsAnimation";
 import { BlockPlacement } from "./pages/blockPlacement";
 import { TextCrawl } from "./pages/textCrawl";
+import { SaveState } from "./pages/saveState";
 
 function Layout() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="physics-animation" element={<PhysicsAnimation />} />
             <Route path="block-placement" element={<BlockPlacement />} />
             <Route path="text-crawl" element={<TextCrawl />} />
+            <Route path="save-state" element={<SaveState />} />
           </Route>
         </Route>
       </Routes>

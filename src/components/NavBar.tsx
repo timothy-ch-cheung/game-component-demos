@@ -113,6 +113,20 @@ export const NavBar = () => {
           >
             Block Placement
           </MenuItem>
+          <MenuItem
+            onClick={demoMenuItemHandler(
+              "/game-component-demos/demos/text-crawl"
+            )}
+          >
+            Text Crawl
+          </MenuItem>
+          <MenuItem
+            onClick={demoMenuItemHandler(
+              "/game-component-demos/demos/save-state"
+            )}
+          >
+            Save State
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

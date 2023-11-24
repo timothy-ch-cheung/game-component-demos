@@ -3,6 +3,7 @@ import mapTween from "../assets/map-tween.gif";
 import physicsAnimation from "../assets/physics-animation.gif";
 import blockPlacement from "../assets/block-placement.gif";
 import textCrawl from "../assets/text-crawl.gif";
+import saveState from "../assets/save-state.gif";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -125,10 +126,19 @@ export function Home() {
             onTryClick={() =>
               navigate("/game-component-demos/demos/text-crawl")
             }
-            codeSource="https://github.com/timothy-ch-cheung/text-crawl"
+            codeSource="https://github.com/timothy-ch-cheung/go-game-text-crawl"
             title="Text Crawl"
-            description="Slowly revealing text, commonly used in RPGs."
+            description="A demo to show saving on both desktop and web platforms."
             image={textCrawl}
+          />
+          <DemoCard
+            onTryClick={() =>
+              navigate("/game-component-demos/demos/save-state")
+            }
+            codeSource="https://github.com/timothy-ch-cheung/go-gamesave-state"
+            title="Save State"
+            description="A demo to show saving on both desktop and web platforms."
+            image={saveState}
           />
         </Grid>
       </Stack>
