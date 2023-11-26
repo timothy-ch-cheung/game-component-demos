@@ -10,7 +10,7 @@ const PROGRESS_SIZE = 20;
 
 function getBody(wasmFile: string) {
   return `
-    <script src="wasm_exec.js"></script>
+    <script src="game-component-demos/demos/wasm_exec.js"></script>
     <script>
       // Polyfill
       if (!WebAssembly.instantiateStreaming) {
@@ -22,7 +22,7 @@ function getBody(wasmFile: string) {
 
       const go = new Go();
       WebAssembly.instantiateStreaming(
-        fetch("${wasmFile}"),
+        fetch("game-component-demos/demos/${wasmFile}"),
         go.importObject
       ).then((result) => {
         go.run(result.instance);
