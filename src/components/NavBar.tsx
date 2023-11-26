@@ -33,7 +33,7 @@ export const NavBar = () => {
   const open = Boolean(anchorEl);
 
   const handleHomeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    navigate("/game-component-demos/");
+    navigate("");
   };
 
   const handleDemoMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -87,42 +87,42 @@ export const NavBar = () => {
         >
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/game-menu"
+              "/demos/game-menu"
             )}
           >
             Game Menu
           </MenuItem>
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/map-tween"
+              "/demos/map-tween"
             )}
           >
             Map Tween
           </MenuItem>
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/physics-animation"
+              "/demos/physics-animation"
             )}
           >
             Physics Animation
           </MenuItem>
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/block-placement"
+              "/demos/block-placement"
             )}
           >
             Block Placement
           </MenuItem>
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/text-crawl"
+              "/demos/text-crawl"
             )}
           >
             Text Crawl
           </MenuItem>
           <MenuItem
             onClick={demoMenuItemHandler(
-              "/game-component-demos/demos/save-state"
+              "/demos/save-state"
             )}
           >
             Save State
