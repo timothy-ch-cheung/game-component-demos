@@ -9,8 +9,9 @@ interface GameWindowProps {
 const PROGRESS_SIZE = 20;
 
 function getBody(wasmFile: string) {
+  const origin = window.location.origin;
   return `
-    <script src="game-component-demos/demos/wasm_exec.js"></script>
+    <script src="${origin}/game-component-demos/demos/wasm_exec.js"></script>
     <script>
       // Polyfill
       if (!WebAssembly.instantiateStreaming) {
@@ -22,7 +23,7 @@ function getBody(wasmFile: string) {
 
       const go = new Go();
       WebAssembly.instantiateStreaming(
-        fetch("game-component-demos/demos/${wasmFile}"),
+        fetch("${origin}/game-component-demos/demos/${wasmFile}"),
         go.importObject
       ).then((result) => {
         go.run(result.instance);
