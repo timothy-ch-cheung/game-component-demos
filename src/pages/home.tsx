@@ -91,50 +91,42 @@ export function Home() {
         </Typography>
         <Grid container spacing={1} alignItems="stretch">
           <DemoCard
-            onTryClick={() => navigate("/game-component-demos/demos/game-menu")}
+            onTryClick={() => navigate("/demos/game-menu")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-menu"
             title="Game Menus"
             description="Menu UI rendering in tandem with regular Ebitengine rendering. Demonstrates how to switch been different screens for a game."
             image={gameMenu}
           />
           <DemoCard
-            onTryClick={() => navigate("/game-component-demos/demos/map-tween")}
+            onTryClick={() => navigate("/demos/map-tween")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-tween"
             title="Map Panning"
             description="Smooth map camera movement using ebiten-camera and gween. Includes a minimap of world view."
             image={mapTween}
           />
           <DemoCard
-            onTryClick={() =>
-              navigate("/game-component-demos/demos/physics-animation")
-            }
+            onTryClick={() => navigate("/demos/physics-animation")}
             codeSource="https://github.com/timothy-ch-cheung/physics-animation"
             title="Physics and Animation"
             description="Basic platformer with physics and animation for combo attacks."
             image={physicsAnimation}
           />
           <DemoCard
-            onTryClick={() =>
-              navigate("/game-component-demos/demos/block-placement")
-            }
+            onTryClick={() => navigate("/demos/block-placement")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-block-placement"
             title="Block Placement"
             description="Top down 2D and Isometric rendering with cursor collision detection."
             image={blockPlacement}
           />
           <DemoCard
-            onTryClick={() =>
-              navigate("/game-component-demos/demos/text-crawl")
-            }
+            onTryClick={() => navigate("/demos/text-crawl")}
             codeSource="https://github.com/timothy-ch-cheung/go-game-text-crawl"
             title="Text Crawl"
             description="A demo to show saving on both desktop and web platforms."
             image={textCrawl}
           />
           <DemoCard
-            onTryClick={() =>
-              navigate("/game-component-demos/demos/save-state")
-            }
+            onTryClick={() => navigate("/demos/save-state")}
             codeSource="https://github.com/timothy-ch-cheung/go-gamesave-state"
             title="Save State"
             description="A demo to show saving on both desktop and web platforms."
