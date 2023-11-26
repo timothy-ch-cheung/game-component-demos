@@ -2,7 +2,6 @@ import React from "react";
 import { Background } from "./components/Background";
 import { NavBar } from "./components/NavBar";
 import {
-  BrowserRouter,
   HashRouter,
   Routes,
   Route,
