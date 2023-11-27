@@ -15,12 +15,12 @@ const LIBRARIES = [
   },
   {
     name: "Ebitengine-Resource",
-    description: "Loading sprites",
+    description: "Loading UI sprites",
     link: "https://github.com/quasilyte/ebitengine-resource",
   },
   {
     name: "EbitenUI",
-    description: "Next/Prev buttons",
+    description: "Notes screen, create note window",
     link: "https://github.com/ebitenui/ebitenui",
   },
 ];

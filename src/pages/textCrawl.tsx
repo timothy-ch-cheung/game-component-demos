@@ -20,7 +20,7 @@ const LIBRARIES = [
   },
   {
     name: "EbitenUI",
-    description: "Next/Prev buttons",
+    description: "Screen layout, Edit extend window",
     link: "https://github.com/ebitenui/ebitenui",
   },
 ];
