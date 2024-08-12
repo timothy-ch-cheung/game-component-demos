@@ -43,7 +43,8 @@ export function GameMenu() {
     <div style={{ display: "flex", justifyContent: "center", marginTop: "5%" }}>
       <Stack spacing={2}>
         <GameWindow
-          wasmFile="gameMenu-1-0-0.wasm"
+          wasmFile="gameMenu-1-0-1.wasm"
+          goVersion="1.22"
           width={width}
           height={height}
         />

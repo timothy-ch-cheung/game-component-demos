@@ -53,6 +53,7 @@ export function TextCrawl() {
       <Stack spacing={2}>
         <GameWindow
           wasmFile="textCrawl-1-0-0.wasm"
+          goVersion="1.18"
           width={width}
           height={height}
         />

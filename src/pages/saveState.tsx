@@ -49,6 +49,7 @@ export function SaveState() {
       <Stack spacing={2}>
         <GameWindow
           wasmFile="saveState-1-0-0.wasm"
+          goVersion="1.18"
           width={width}
           height={height}
         />

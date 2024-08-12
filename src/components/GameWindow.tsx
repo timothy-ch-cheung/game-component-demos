@@ -2,16 +2,17 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 interface GameWindowProps {
   wasmFile: string;
+  goVersion: string;
   width: number;
   height: number;
 }
 
 const PROGRESS_SIZE = 20;
 
-function getBody(wasmFile: string) {
+function getBody(wasmFile: string, goVersion: string) {
   const origin = window.location.origin;
   return `
-    <script src="${origin}/game-component-demos/demos/wasm_exec.js"></script>
+    <script src="${origin}/game-component-demos/demos/wasm_exec_${goVersion}.js"></script>
     <script>
       // Polyfill
       if (!WebAssembly.instantiateStreaming) {
@@ -34,6 +35,7 @@ function getBody(wasmFile: string) {
 
 export default function GameWindow({
   wasmFile,
+  goVersion,
   width,
   height,
 }: GameWindowProps) {
@@ -57,7 +59,7 @@ export default function GameWindow({
         />
       </div>
       <iframe
-        srcDoc={getBody(wasmFile)}
+        srcDoc={getBody(wasmFile, goVersion)}
         title={wasmFile}
         width={width}
         height={height}
