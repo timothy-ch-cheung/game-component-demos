@@ -48,8 +48,8 @@ export function SaveState() {
     <div style={{ display: "flex", justifyContent: "center", marginTop: "5%" }}>
       <Stack spacing={2}>
         <GameWindow
-          wasmFile="saveState-1-0-0.wasm"
-          goVersion="1.18"
+          wasmFile="saveState-1-0-1.wasm"
+          goVersion="1.22"
           width={width}
           height={height}
         />
