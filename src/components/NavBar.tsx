@@ -127,6 +127,13 @@ export const NavBar = () => {
           >
             Save State
           </MenuItem>
+          <MenuItem
+              onClick={demoMenuItemHandler(
+                  "/demos/system-forge"
+              )}
+          >
+            System Forge
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

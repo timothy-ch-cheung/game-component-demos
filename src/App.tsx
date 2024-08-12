@@ -14,6 +14,7 @@ import { PhysicsAnimation } from "./pages/physicsAnimation";
 import { BlockPlacement } from "./pages/blockPlacement";
 import { TextCrawl } from "./pages/textCrawl";
 import { SaveState } from "./pages/saveState";
+import {SystemForge} from "./pages/systemForge";
 
 function Layout() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="block-placement" element={<BlockPlacement />} />
             <Route path="text-crawl" element={<TextCrawl />} />
             <Route path="save-state" element={<SaveState />} />
+            <Route path="system-forge" element={<SystemForge />} />
           </Route>
         </Route>
       </Routes>
