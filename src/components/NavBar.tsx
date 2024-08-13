@@ -3,6 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import CabinIcon from "@mui/icons-material/Cabin";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import SettingsIcon from '@mui/icons-material/Settings';
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
@@ -34,6 +35,10 @@ export const NavBar = () => {
 
   const handleHomeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     navigate("");
+  };
+
+  const handleSystemForgeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    navigate("/demos/system-forge");
   };
 
   const handleDemoMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -71,6 +76,10 @@ export const NavBar = () => {
         <CabinIcon sx={{ mr: ICON_SPACING }} />
         <Button sx={style} onClick={handleHomeClick}>
           Home
+        </Button>
+        <SettingsIcon sx={{ mr: ICON_SPACING }} />
+        <Button sx={style} onClick={handleSystemForgeClick}>
+          System Forge
         </Button>
         <SportsEsportsIcon sx={{ mr: ICON_SPACING }} />
         <Button sx={style} onClick={handleDemoMenuClick}>
@@ -126,6 +135,13 @@ export const NavBar = () => {
             )}
           >
             Save State
+          </MenuItem>
+          <MenuItem
+              onClick={demoMenuItemHandler(
+                  "/demos/system-forge"
+              )}
+          >
+            System Forge
           </MenuItem>
         </Menu>
       </Toolbar>
