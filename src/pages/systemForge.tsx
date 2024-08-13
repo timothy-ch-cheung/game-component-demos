@@ -4,10 +4,9 @@ import { DeviceSize, useDeviceSize } from "../components/Device";
 import GameWindow from "../components/GameWindow";
 
 const DESCRIPTION =
-  "Place and Delete blocks. Swith between views using the Iso/2d toggle on the top left.";
+  "A game inspired by software system design.";
 const CONTROLS = [
-  { key: "Left Mouse Click", action: "Place Block, Switch View" },
-  { key: "Right Mouse Click", action: "Delete Block" },
+  { key: "Left Mouse Click", action: "Interact with UI" },
 ];
 
 const LIBRARIES = [
@@ -18,7 +17,7 @@ const LIBRARIES = [
   },
   {
     name: "EbitenUI",
-    description: "View and block selection UI",
+    description: "General UI",
     link: "https://github.com/ebitenui/ebitenui",
   },
   {
@@ -43,13 +42,13 @@ const ART = [{ name: "Sprites", link: "https://github.com/timothy-ch-cheung" }];
 function getWindowSize(size: DeviceSize): [number, number] {
   switch (size) {
     case DeviceSize.EXTRA_SMALL:
-      return [360, 240];
+      return [427, 240];
     case DeviceSize.SMALL:
-      return [540, 360];
+      return [640, 360];
     case DeviceSize.MEDIUM:
-      return [720, 480];
+      return [854, 480];
     case DeviceSize.LARGE:
-      return [1080, 720];
+      return [1280, 720];
   }
 }
 
